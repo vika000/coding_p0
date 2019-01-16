@@ -7,9 +7,9 @@ function draw() {
 	window.onresize = function(){createCanvas(windowWidth, windowHeight)};
 
 	if (mouseIsPressed) {
-		fill(0);
+		fill(200, 200, 200, 200);
 	} else {
 		fill(255);
 	}
-  ellipse(mouseX, mouseY, 80, 80);
+  ellipse(mouseX, mouseY, 30, 45);
 }
