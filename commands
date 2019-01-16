@@ -16,5 +16,7 @@ git clone ____________ - copies stuff from internet/github
 
 git status - checks current dorectory 
 git add .
-git commit -amg'some comment'
-git push origin master
+
+*remember to save on sublime first*
+git commit -am 'some comment'
+git push origin gh-pages 
