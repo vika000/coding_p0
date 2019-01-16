@@ -5,8 +5,8 @@ function setup() {
 
 function draw() {
 	window.onresize = function(){createCanvas(windowWidth, windowHeight)};
-	
-	if (mousePressed) {
+
+	if (mouseIsPressed) {
 		fill(0);
 	} else {
 		fill(255);
