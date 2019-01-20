@@ -13,12 +13,12 @@ function draw() {
   ambientLight(60, 60, 60);
   pointLight(255, 255, 255, locX, locY, 100);
  
-  push();
-  translate(-width / 4, height / 4, 0);
+   push();
+  translate(width / 4, -height / 4, 0);
   rotateZ(frameCount * 0.01);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
-  ambientMaterial(250);
+  normalMaterial();
   torus(80, 20, 64, 64);
   pop();
 
