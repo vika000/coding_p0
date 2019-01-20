@@ -19,8 +19,11 @@ function draw() {
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   normalMaterial();
-  torus(80, 20, 64, 64);
+  torus(mouseX, height/2, mouseY/2+10, mouseY/2+10);
   pop();
+
+  var inverseX = width-mouseX;
+  var inverseY = height-mouseY;
 
    push();
   translate(width / 4, height / 4, 0);
@@ -28,7 +31,7 @@ function draw() {
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   specularMaterial(250);
-  torus(80, 20, 64, 64);
+  torus(inverseX, height/2, (inverseY/2)+10, (inverseY/2)+10);
   pop();
 
 	//if (mouseIsPressed) {
