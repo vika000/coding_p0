@@ -14,19 +14,22 @@ function draw() {
   pointLight(255, 255, 255, locX, locY, 100);
  
    push();
-  translate(width / 4, -height / 4, 0);
+   //the z changed to 100 ... use tob 0
+  translate(width / 4, -height / 4, 100);
   rotateZ(frameCount * 0.01);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   normalMaterial();
+
   torus(mouseX, height/2, mouseY/2+10, mouseY/2+10);
+
   pop();
 
   var inverseX = width-mouseX;
   var inverseY = height-mouseY;
 
    push();
-  translate(width / 4, height / 4, 0);
+  translate(width / 4, height / 4, 100);
   rotateZ(frameCount * 0.01);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
