@@ -18,5 +18,6 @@ git status - checks current dorectory
 git add .
 
 *remember to save on sublime first*
+............. then .......
 git commit -am 'some comment'
 git push origin gh-pages 

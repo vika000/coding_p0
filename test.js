@@ -5,6 +5,10 @@ function setup() {
 }
 
 function draw() {
+var torRadius = 2;
+var torLeftright = height/2;
+var torUpDown = mouseY/2+10;
+
 	background(0)
 	window.onresize = function(){createCanvas(windowWidth, windowHeight)};
 	let locX = mouseX - height / 2;
@@ -15,13 +19,14 @@ function draw() {
  
    push();
    //the z changed to 100 ... use tob 0
-  translate(width / 4, -height / 4, 100);
+  translate(width / 4, -height / 4, -500);
   rotateZ(frameCount * 0.01);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   normalMaterial();
 
-  torus(mouseX, height/2, mouseY/2+10, mouseY/2+10);
+  torus(torRadius, torLeftright, torUpDown, 5);
+  	//mouseY/2+10);
 
   pop();
 
@@ -29,12 +34,13 @@ function draw() {
   var inverseY = height-mouseY;
 
    push();
-  translate(width / 4, height / 4, 100);
+  translate(width / 4, height / 4, -500);
   rotateZ(frameCount * 0.01);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   specularMaterial(250);
-  torus(inverseX, height/2, (inverseY/2)+10, (inverseY/2)+10);
+  torus(torRadius, torLeftright, torUpDown);
+  //torus(inverseX, height/2, (inverseY/2)+10, (inverseY/2)+10);
   pop();
 
 	//if (mouseIsPressed) {
