@@ -1,52 +1,53 @@
 function setup() {
-	createCanvas(windowWidth, windowHeight, WEBGL);
-	
-
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-var torRadius = 2;
-var torLeftright = height/2;
-var torUpDown = mouseY/2+10;
+  background(100)
 
-	background(0)
-	window.onresize = function(){createCanvas(windowWidth, windowHeight)};
-	let locX = mouseX - height / 2;
-  let locY = mouseY - width / 2;
+ noStroke();
+  //yellow
+  fill(245,213,30, 50);
+  ellipse(100, 100, 80,80);
+  //green
+  fill(42,82,19);
+  ellipse(520, 227, 80,80);
+  //red
+  fill(178,5,5);
+  ellipse(60, 425, 80,80);
+  //blue
+  fill(46,60,134, 120);
+  ellipse(20,55, 80,80);
+  
+  fill(178,5,5);
+  beginShape();
+  vertex(415, 0);
+  vertex(415, 410);
+  vertex(300, 410);
+  vertex(259, 410);
+  endShape();
+  
+  //bottom blue tri
+  fill(36,19,124,150);
+  beginShape();
+  vertex(219, 110);
+  vertex(-127, 210);
+  vertex(17, -700);
+  endShape();
+  
+  stroke(4);
+  strokeWeight(.85);
+  line(-10, 0, 100, 100);
+  strokeWeight(.85);
+  line(100, 140, 560, 190);
+  strokeWeight(.95);
+  line(-100, 140, 100, 375);
+  strokeWeight(.65);
+  line(110, 444, 360, 405);
+  strokeWeight(.99);
+  line(100, 602, 105, 398);
+}
 
-  ambientLight(60, 60, 60);
-  pointLight(255, 255, 255, locX, locY, 100);
- 
-   push();
-   //the z changed to 100 ... use tob 0
-  translate(width / 4, -height / 4, -500);
-  rotateZ(frameCount * 0.01);
-  rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
-  normalMaterial();
-
-  torus(torRadius, torLeftright, torUpDown, 5);
-  	//mouseY/2+10);
-
-  pop();
-
-  var inverseX = width-mouseX;
-  var inverseY = height-mouseY;
-
-   push();
-  translate(width / 4, height / 4, -500);
-  rotateZ(frameCount * 0.01);
-  rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
-  specularMaterial(250);
-  torus(torRadius, torLeftright, torUpDown);
-  //torus(inverseX, height/2, (inverseY/2)+10, (inverseY/2)+10);
-  pop();
-
-	//if (mouseIsPressed) {
-		//fill(200, 200, 200, 200);
-	//} else {
-		//fill(255);
-	//}
-  //ellipse(mouseX, mouseY, 30, 45);
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
